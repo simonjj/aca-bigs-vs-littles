@@ -1,0 +1,11 @@
+.azure/
+.env
+.env.*
+artifacts/
+app/node_modules/
+infra/*.json
+!infra/main.parameters.json
+*.parameters.local.json
+*.log
+.DS_Store
+Thumbs.db

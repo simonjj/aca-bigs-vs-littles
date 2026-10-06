@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-10-06T20:15:01.1061855Z",
+  "extendedPair": {
+    "littlesRequests": 5120553.0,
+    "bigsRequests": 5801018.0,
+    "additionalRequests": 680465.0,
+    "littlesRps": 12191.79,
+    "bigsRps": 13811.95,
+    "throughputImprovementPct": 13.29,
+    "meanLatencyReductionPct": 12.19,
+    "p95ReductionPct": 28.52,
+    "p99ReductionPct": 25.8,
+    "littlesErrors": 6795.0,
+    "bigsErrors": 2589.0,
+    "errorRateReductionPct": 66.37,
+    "errorCode": 502,
+    "loadEngineMaximumCpuPct": {
+      "littles": 59.3,
+      "bigs": 67.9
+    },
+    "postRunReplicas": {
+      "littles": 32,
+      "bigs": 16
+    }
+  },
+  "combinedFourPairs": {
+    "durationSecondsPerScenario": 960,
+    "littlesRequests": 11681170.0,
+    "bigsRequests": 13873363.0,
+    "additionalRequests": 2192193.0,
+    "littlesRps": 12167.89,
+    "bigsRps": 14451.42,
+    "throughputImprovementPct": 18.77,
+    "littlesErrorPct": 0.08494,
+    "bigsErrorPct": 0.02673,
+    "errorRateReductionPct": 68.53
+  },
+  "azureMonitorNote": "Container Apps and Storage time-series ingestion was still pending when the extended summary was written; placeholder zero values were excluded."
+}

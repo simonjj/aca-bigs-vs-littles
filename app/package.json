@@ -1,0 +1,24 @@
+{
+  "name": "littles-vs-bigs-simulation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Low-CPU, upstream-bound Node.js simulation app for ACA throughput benchmarking.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:pm2": "pm2-runtime ecosystem.config.cjs",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "pm2": "7.0.4",
+    "undici": "7.30.0"
+  },
+  "overrides": {
+    "basic-ftp": "6.2.1",
+    "braces": "3.0.3",
+    "js-yaml": "5.4.2"
+  }
+}

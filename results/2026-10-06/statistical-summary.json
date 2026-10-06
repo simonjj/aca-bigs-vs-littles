@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-10-06T18:07:37.9829441Z",
+  "throughputRps": {
+    "littles": {
+      "count": 3,
+      "mean": 12149.29,
+      "sampleStdDev": 220.0,
+      "coefficientOfVariationPct": 1.81,
+      "ci95Low": 11602.78,
+      "ci95High": 12695.8,
+      "min": 12001.58,
+      "max": 12402.13
+    },
+    "bigs": {
+      "count": 3,
+      "mean": 14948.79,
+      "sampleStdDev": 563.04,
+      "coefficientOfVariationPct": 3.77,
+      "ci95Low": 13550.13,
+      "ci95High": 16347.45,
+      "min": 14322.59,
+      "max": 15413.28
+    },
+    "pairedDifference": {
+      "count": 3,
+      "mean": 2799.5,
+      "sampleStdDev": 780.61,
+      "coefficientOfVariationPct": 27.88,
+      "ci95Low": 860.36,
+      "ci95High": 4738.64,
+      "min": 1920.46,
+      "max": 3411.71
+    },
+    "relativeMeanImprovementPct": 23.04,
+    "pairwiseImprovementPct": [
+      25.46,
+      28.43,
+      15.48
+    ]
+  },
+  "requests": {
+    "littlesTotal": 6560617.0,
+    "bigsTotal": 8072345.0,
+    "additionalRequestsBigs": 1511728.0
+  },
+  "errors": {
+    "littlesCount": 3127.0,
+    "littlesPct": 0.04766,
+    "bigsCount": 1119.0,
+    "bigsPct": 0.01386,
+    "relativeReductionPct": 70.92
+  },
+  "latencyMs": {
+    "mean": {
+      "littles": 158.31,
+      "bigs": 128.47
+    },
+    "p95": {
+      "littles": 297.33,
+      "bigs": 179.0
+    },
+    "p99": {
+      "littles": 3152.0,
+      "bigs": 1818.0
+    }
+  }
+}

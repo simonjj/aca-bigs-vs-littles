@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: aca-bigs-vs-littles
+metadata:
+  template: aca-bigs-vs-littles@0.0.1-beta
+
+infra:
+  provider: bicep
+  path: ./infra
+
+services:
+  littles:
+    project: ./app
+    host: containerapp
+    language: docker
+    docker:
+      path: ./Containerfile
+      context: .
+      remoteBuild: true
+      buildArgs:
+        - PROCESS_MODEL=single
+  bigs:
+    project: ./app
+    host: containerapp
+    language: docker
+    docker:
+      path: ./Containerfile
+      context: .
+      remoteBuild: true
+      buildArgs:
+        - PROCESS_MODEL=pm2
+
+hooks:
+  postprovision:
+    shell: pwsh
+    run: ./scripts/configure-upstreams.ps1
+    interactive: false
+  postdeploy:
+    shell: pwsh
+    run: ./scripts/register-load-test.ps1
+    interactive: false

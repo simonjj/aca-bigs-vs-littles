@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-10-06T18:07:38.0193216Z",
+  "storage": {
+    "littles": {
+      "Success": 6559867.0
+    },
+    "bigs": {
+      "Success": 8072023.0
+    }
+  },
+  "apps": {
+    "littles": {
+      "replicaMinimum": 32.0,
+      "replicaMaximum": 32.0,
+      "restartCount": 0.0
+    },
+    "bigs": {
+      "replicaMinimum": 16.0,
+      "replicaMaximum": 16.0,
+      "restartCount": 0.0
+    }
+  },
+  "loadEngines": {
+    "littles": {
+      "representativeRun": "littles-2-20261006120647",
+      "averageCpuPct": 51.6,
+      "maximumCpuPct": 68.0
+    },
+    "bigs": {
+      "representativeRun": "bigs-2-20261006120647",
+      "averageCpuPct": 63.1,
+      "maximumCpuPct": 80.6
+    }
+  },
+  "errors": {
+    "bigs-3-20261006120647": {
+      "502": 642.0
+    },
+    "bigs-1-20261006120647": {
+      "502": 304.0
+    },
+    "littles-3-20261006120647": {
+      "502": 1016.0
+    },
+    "littles-1-20261006120647": {
+      "502": 927.0
+    },
+    "bigs-2-20261006120647": {
+      "502": 173.0
+    },
+    "littles-2-20261006120647": {
+      "502": 1184.0
+    }
+  }
+}

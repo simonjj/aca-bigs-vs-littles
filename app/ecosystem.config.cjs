@@ -10,6 +10,6 @@ module.exports = {
       listen_timeout: 10_000,
       max_memory_restart: '850M',
       merge_logs: true
-    };
+    }
   ]
 };

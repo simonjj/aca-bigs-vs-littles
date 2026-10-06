@@ -7,7 +7,33 @@ An `azd`-deployable benchmark comparing two fixed-scale Node.js topologies on Az
 | Littles | 32 | 0.5 vCPU / 2 GiB | 1 | 16 vCPU / 64 GiB |
 | Bigs | 16 | 1 vCPU / 4 GiB | 2 PM2 workers | 16 vCPU / 64 GiB |
 
-**Recorded result:** Bigs won all four high-load pairs. Across 960 measured seconds per scenario, it delivered **18.77% more throughput**, **2,192,193 additional requests**, and a **68.53% lower error rate**. See [the full benchmark outcome](benchmark-outcome.md).
+## Benchmark outcomes
+
+Both high-load tests used four Azure Load Testing engines, 500 users per engine (2,000 total), a 15-second ramp, fixed app replicas, and fixed Premium ingress capacity.
+
+| Metric | Test 1: three 180-second pairs | Test 2: one 420-second pair |
+|---|---:|---:|
+| Littles requests | 6,560,617 | 5,120,553 |
+| Bigs requests | 8,072,345 | 5,801,018 |
+| Littles throughput | 12,149.29 RPS | 12,191.79 RPS |
+| Bigs throughput | 14,948.79 RPS | 13,811.95 RPS |
+| **Bigs throughput improvement** | **23.04%** | **13.29%** |
+| Bigs mean latency reduction | 18.85% | 12.19% |
+| Bigs p95 latency reduction | 39.80% | 28.52% |
+| Bigs p99 latency reduction | 42.32% | 25.80% |
+| **Bigs error-rate reduction** | **70.92%** | **66.37%** |
+
+Across both tests, each scenario ran for 960 measured seconds:
+
+| Combined outcome | Littles | Bigs | Bigs difference |
+|---|---:|---:|---:|
+| Requests | 11,681,170 | 13,873,363 | **+2,192,193** |
+| Time-weighted throughput | 12,167.89 RPS | 14,451.42 RPS | **+18.77%** |
+| Weighted error rate | 0.08494% | 0.02673% | **-68.53%** |
+
+**Conclusion:** Bigs won all four high-load pairs. The 400-user warm-up was effectively tied, but at 2,000 users the larger replicas with two PM2 workers consistently delivered more throughput, lower latency, and fewer upstream timeout failures. Both scenarios retained their fixed replica counts with zero app restarts, and the load generators retained CPU headroom.
+
+This result compares the complete **Bigs + PM2 topology** against **Littles**; it does not isolate PM2 as the sole cause. See [the full benchmark outcome](benchmark-outcome.md) for per-run data, confidence intervals, validity checks, and interpretation.
 
 ## Architecture
 
